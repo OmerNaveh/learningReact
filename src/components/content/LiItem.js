@@ -6,7 +6,7 @@ export default class LiItem extends Component{
     }
    
     render(){
-        const listItems = this.state.groceries.map((item,index) => <li onClick={this.props.onClickFunc} className='liItem' key={index}>{item}</li>);
+        const listItems = this.state.groceries.map((item,index) => <li onClick={this.props.onClickFunc} className='liItem' key={index}><i className="far fa-plus-square svgs"></i> {item}</li>);
         return(
             <>
             {listItems}

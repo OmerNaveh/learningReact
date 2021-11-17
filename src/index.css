@@ -52,3 +52,26 @@ body{
 .basketItem{
   list-style: none;
 }
+.basketItem:hover{
+  background-color: turquoise;
+}
+.putline{
+  text-decoration: line-through;
+}
+.clearBasketImg{
+  opacity: 0.5;
+}
+.clearBasketImg:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+.svgs{
+  color: green;
+}
+.svgMin{
+  color: red;
+}
+
+h4{
+  text-align: center;
+}

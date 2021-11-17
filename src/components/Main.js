@@ -10,7 +10,11 @@ export default class Main extends Component{
         this.state = { basket:[]};
     }
     updateItem=(e)=>{
-        this.setState((prevState)=>prevState.basket.push(e.target.textContent))
+        if(!e.target.textContent) return
+        this.setState({ basket: [...this.state.basket, e.target.textContent] });
+    }
+    clearBasket = ()=>{
+        this.setState({basket : []});
     }
     render(){
         return(
@@ -18,7 +22,7 @@ export default class Main extends Component{
             <Header name='omer' />
             <section className = 'container'> 
             <Groceries onClickFunc = {this.updateItem}/>
-            <Basket basket={this.state.basket}/>
+            <Basket basket={this.state.basket} clearBasket={this.clearBasket}/>
             </section>
             <Footer />
             </>

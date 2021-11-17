@@ -1,12 +1,8 @@
 import { Component } from "react";
 export default class BasketItem extends Component{
-    constructor(props){
-        super(props)
-        this.state = {basket: this.props.basket}
-    }
     processList = () => {
         try{
-        const sorted = this.state.basket.sort()
+        const sorted = this.props.basket.sort()
         const res = []
             let counter = 1
             for (let i = 0; i < sorted.length; i++) {
@@ -25,7 +21,11 @@ export default class BasketItem extends Component{
     }
     
     render(){
-        const listItems = this.processList().map((item,index) => <li className='basketItem' key={index}>{item.counter}  {item.item}</li>);
+        const listItems = this.processList().map((item,index) => <li onClick={
+            (e)=>{
+              e.target.classList.toggle('putline')  
+            }
+        } className='basketItem' key={index}><i class="far fa-minus-square svgMin"></i> {item.counter}  {item.item}</li>);
         return(
             <>
             {listItems}
